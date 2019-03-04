@@ -152,41 +152,59 @@
                     <a class="cur" href="javascript:">亚洲电影</a>
                 </div>
 
-                <div class="videoDetail">
-                    <div class="wrap clearfix">
-                        <div class="videoImg">
-                            <img src="${staticHost}/images/img1.jpg" alt="">
-                        </div>
-                        <div class="videoTxt">
-                            <h4>上私人摄影课程会让妻子跟讲师幹起来</h4>
-                            <span>類型：亚洲电影</span>
-                            <span>更新：2019-02-21</span>
-                            <span>推薦：<a href="javascript:">直播做爱，自摸大秀，赶快加入</a></span>
-                        </div>
-                    </div>
+                <%--<div class="videoDetail">--%>
+                    <%--<div class="wrap clearfix">--%>
+                        <%--<div class="videoImg">--%>
+                            <%--<img src="${staticHost}/images/img1.jpg" alt="">--%>
+                        <%--</div>--%>
+                        <%--<div class="videoTxt">--%>
+                            <%--<h4>上私人摄影课程会让妻子跟讲师幹起来</h4>--%>
+                            <%--<span>類型：亚洲电影</span>--%>
+                            <%--<span>更新：2019-02-21</span>--%>
+                            <%--<span>推薦：<a href="javascript:">直播做爱，自摸大秀，赶快加入</a></span>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
 
-                    <div class="video" id="videoPlay">
-                        <img src="${video.videoImageUrl}" alt="${video.videoImageAlt }">
-                        <div class="playBtn"></div>
-                        <div class="mask" onclick="playVideo();"></div>
-                    </div>
+                    <%--<div class="video" id="videoPlay">--%>
+                        <%--<img src="${video.videoImageUrl}" alt="${video.videoImageAlt }">--%>
+                        <%--<div class="playBtn"></div>--%>
+                        <%--<div class="mask" onclick="playVideo();"></div>--%>
+                    <%--</div>--%>
 
-                    <div class="videoPlayLink">
-                        <div class="bor">
-                            <span><i></i>播放线路</span>
-                        </div>
-                        <div class="playLine">
-                            <a href="javascript:">
-                                <em>线路一</em>
-                                <span>全球加速节点 - 默认线路</span>
-                            </a>
-                            <a href="javascript:">
-                                <em>线路二</em>
-                                <span>全球加速节点</span>
-                            </a>
-                        </div>
+                    <%--<div class="videoPlayLink">--%>
+                        <%--<div class="bor">--%>
+                            <%--<span><i></i>播放线路</span>--%>
+                        <%--</div>--%>
+                        <%--<div class="playLine">--%>
+                            <%--<a href="javascript:">--%>
+                                <%--<em>线路一</em>--%>
+                                <%--<span>全球加速节点 - 默认线路</span>--%>
+                            <%--</a>--%>
+                            <%--<a href="javascript:">--%>
+                                <%--<em>线路二</em>--%>
+                                <%--<span>全球加速节点</span>--%>
+                            <%--</a>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+
+                <div class="video" id="videoPlay">
+                    <img src="${staticHost}/images/img1.jpg" alt="">
+                    <div class="playBtn"></div>
+                    <div class="mask" onclick="playVideo();"></div>
+                </div>
+
+                <div class="next_page clearfix">
+                    <div class="prevBtn">
+                        上一篇：
+                        <a href="javascript:" target="_blank">上私人摄影课程会让妻子跟讲师幹起来吗?</a>
+                    </div>
+                    <div class="nextBtn">
+                        下一篇：
+                        <a href="javascript:" target="_blank">上私人摄影课程会让妻子跟讲师幹起来吗?</a>
                     </div>
                 </div>
+
 
             </div>
         </div>
