@@ -6,24 +6,24 @@
 <head>
     <title>500</title>
     <jsp:include page="../common/public.jsp"/>
-    <link href="/static/css/main.css?v=${version}" rel="stylesheet" type="text/css"/>
 </head>
 
 <style>
     body{
-        background-color:#b4ccef;
+        background-color:#fbe0e5;
     }
     .errorContent {
-        width: 760px;
-        height: 528px;
-        position: absolute;
+        width: 606px;
+        height: 606px;
+        position: fixed;
         top: 12%;
         left: 50%;
-        margin-left:-380px;
+        margin-left:-303px;
+        background: url("../../static/images/404.png") 50% 50% no-repeat;
     }
 
     .errorContent .errorBtn {
-        margin: 534px auto 0;
+        margin: 500px auto 0;
         text-align: center;
     }
     .errorContent .errorBtn span{
@@ -34,25 +34,25 @@
 
     .errorContent .errorBtn a {
         display: block;
-        width: 100%;
-        height: 80px;
-        line-height: 80px;
+        width: 240px;
+        height: 54px;
+        line-height: 54px;
+        border-radius: 54px;
         margin:0 auto;
         text-align: center;
-        font-size: 34px;
-        color: #fcd66f;
-        background-color: #e8504f;
+        font-size: 24px;
+        color: #f8f8f4;
+        background-color: #ed018c;
     }
 </style>
 
 <body>
 <div class="errorContent">
     <div class="errorBtn">
-        <a href="javascript:;" onclick="qqCustomer(${qqNum})">联系客服</a>
+        <a href="javascript:;">返回首页</a>
     </div>
 </div>
 
-<iframe id="ifqq1" style="display:none;" src=""></iframe>
 
 </body>
 <script>
@@ -76,10 +76,6 @@
             for (var i = keys.length; i--;)
                 document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
         }
-    }
-
-    function qqCustomer(qq) {
-        $("body").find("iframe").eq(0).attr("src", "tencent://message/?uin=" + qq + "");
     }
 
 </script>
