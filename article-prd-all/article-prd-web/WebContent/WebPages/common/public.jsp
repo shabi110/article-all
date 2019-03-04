@@ -39,6 +39,7 @@
 <script src="${staticHost}/js/jquery-1.11.3.js"></script>
 <script src="${staticHost}/js/TcPlayer-2.2.0.js"></script>
 <script src="${staticHost}/js/swiper.min.js"></script>
+<script src="${staticHost}/js/paging.js"></script>
 <script src="${staticHost}/js/flexible.js"></script>
 <link rel="stylesheet" href="${staticHost}/css/swiper.min.css">
 <!--手机端-->
