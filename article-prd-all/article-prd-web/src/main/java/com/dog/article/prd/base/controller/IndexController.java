@@ -8,13 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dog.article.common.base.model.SiteBanner;
 import com.dog.article.common.video.model.VideoCate;
 import com.dog.article.common.video.model.VideoInfo;
 import com.dog.article.service.base.service.IBaseCacheService;
 import com.dog.article.service.video.service.IVideoInfoService;
 import com.dog.framework.base.database.domain.page.PageResult;
 import com.dog.framework.base.database.domain.page.PageSearch;
+import com.dog.framework.base.database.domain.search.RangeCondition;
+import com.dog.framework.base.database.domain.search.RangeConditionType;
 import com.dog.framework.base.database.domain.search.SearchCondition;
+import com.google.common.collect.Lists;
 
 @Controller
 public class IndexController {
@@ -29,10 +33,12 @@ public class IndexController {
 		List<VideoInfo> recommendList =  this.baseCacheService.getRecommendVideoInfoList();
 		List<VideoInfo> newsList =  this.baseCacheService.getNewVideoInfoList();
 		List<VideoInfo> mostList =  this.baseCacheService.getMostVideoInfoList();
+		List<SiteBanner> bannerList = this.baseCacheService.getSiteBannerList();
 		model.addAttribute("cateList", cateList);
 		model.addAttribute("recommendList", recommendList);
 		model.addAttribute("newsList", newsList);
 		model.addAttribute("mostList", mostList);
+		model.addAttribute("bannerList", bannerList);
 		return "index";
 	}
 	
@@ -63,6 +69,8 @@ public class IndexController {
 		model.addAttribute("cateList", cateList);
 		model.addAttribute("cate", this.baseCacheService.getVideoCateByCode(cateCode));
 		model.addAttribute("totalPage", totalPage(Integer.valueOf(pr.getTotal()+"")));
+		List<SiteBanner> bannerList = this.baseCacheService.getSiteBannerList();
+		model.addAttribute("bannerList", bannerList);
 		return "video";
 	}
 
@@ -72,6 +80,23 @@ public class IndexController {
 		model.addAttribute("video", video);
 		List<VideoCate> cateList = this.baseCacheService.getVideoCateList();
 		model.addAttribute("cateList", cateList);
+		VideoInfo befo = new VideoInfo();
+		befo.setVideoCateCode(video.getVideoCateCode());
+		SearchCondition<VideoInfo> b=new SearchCondition<VideoInfo>(new VideoInfo());
+		b.buildRangeConditions(new RangeCondition("id",video.getId(),RangeConditionType.LessThan));
+		b.buildOrderByConditions("id", "desc");
+		befo = this.videoInfoService.findOneByCondition(b);
+		VideoInfo next = new VideoInfo();
+		next.setVideoCateCode(video.getVideoCateCode());
+		SearchCondition<VideoInfo> n=new SearchCondition<VideoInfo>(next);
+		n.buildRangeConditions(new RangeCondition("id",video.getId(),RangeConditionType.GreaterThan));
+		n.buildOrderByConditions("id", "asc");
+		next = this.videoInfoService.findOneByCondition(n);
+		
+		model.addAttribute("pre", befo);
+		model.addAttribute("next", next);
+		List<SiteBanner> bannerList = this.baseCacheService.getSiteBannerList();
+		model.addAttribute("bannerList", bannerList);
 		return "video.detai";
 	
 	}

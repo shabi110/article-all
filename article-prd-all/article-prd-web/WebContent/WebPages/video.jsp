@@ -25,7 +25,7 @@
             <div class="menu">
                <!--  <a class="cur" href="javascript:">图片区</a>
                 <a href="javascript:" class="hide">小说区</a> -->
-                <a href="javascript:">电影区</a>
+                <!-- <a href="javascript:">电影区</a> -->
                <!--  <a href="javascript:" class="hide"><i>HOT</i>博彩区</a>
                 <a href="javascript:" class="hide">撸撸区</a>
                 <a href="javascript:" class="hide">MP3</a> -->
@@ -39,18 +39,11 @@
     <div class="main">
         <div class="banner swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner1.jpg" alt="">
+                 <c:forEach var = "item" items="${bannerList }">
+            	 <div class="swiper-slide">
+                    <a href="${item.linkUrl }" target="_blank"><img src="${item.imgUrl }" alt=""></a>
                 </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner2.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner3.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner4.jpg" alt="">
-                </div>
+            	</c:forEach>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -93,7 +86,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="../v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
+                    		<a href="../v_${item.code }.html" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>

@@ -373,7 +373,8 @@ input[type="number"]{
     left:50%;
     top:50%;
     margin:-40px 0 0 -40px;
-    background:url("../images/play.png") 50% 50% no-repeat;
+    background:url("../images/play.png") 50% 50% no-repeat ;
+    z-index: 2;
 }
 .video .mask{
     width:100%;
@@ -383,6 +384,7 @@ input[type="number"]{
     top:0;
     right:0;
     bottom:0;
+    background-color: #000000;
 }
 
 .next_page{

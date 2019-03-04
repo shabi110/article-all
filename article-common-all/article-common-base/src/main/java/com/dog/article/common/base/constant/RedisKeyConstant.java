@@ -24,4 +24,7 @@ public class RedisKeyConstant {
 	
 	/**观看次数*/
 	public static final String VIDEO_MOST_KEY="dog-article-most-new";
+	
+	/**banner列表*/
+	public static final String BANNER_LIST_KEY="dog-article-banner-list-key";
 }

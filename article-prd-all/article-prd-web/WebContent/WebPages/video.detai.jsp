@@ -25,7 +25,7 @@
             <div class="menu">
                <!--  <a class="cur" href="javascript:">图片区</a>
                 <a href="javascript:" class="hide">小说区</a> -->
-                <a href="javascript:">电影区</a>
+                <!-- <a href="javascript:">电影区</a> -->
                <!--  <a href="javascript:" class="hide"><i>HOT</i>博彩区</a>
                 <a href="javascript:" class="hide">撸撸区</a>
                 <a href="javascript:" class="hide">MP3</a> -->
@@ -39,18 +39,11 @@
     <div class="main">
         <div class="banner swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner1.jpg" alt="">
+                <c:forEach var = "item" items="${bannerList }">
+            	 <div class="swiper-slide">
+                    <a href="${item.linkUrl }" target="_blank"><img src="${item.imgUrl }" alt=""></a>
                 </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner2.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner3.jpg" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="${staticHost}/images/banner4.jpg" alt="">
-                </div>
+            	</c:forEach>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -147,62 +140,43 @@
             <div class="wrap">
                 <div class="crumbs">
                     <span>您的位置：</span>
-                    <a href="javascript:">首页</a> 》
+                    <a href="../">首页</a> 》
                     <a href="javascript:">电影区</a> 》
-                    <a class="cur" href="javascript:">亚洲电影</a>
+                    <a class="cur" href="../v_${video.videoCateCode}.html">${video.videoCateName }</a>
                 </div>
 
-                <%--<div class="videoDetail">--%>
-                    <%--<div class="wrap clearfix">--%>
-                        <%--<div class="videoImg">--%>
-                            <%--<img src="${staticHost}/images/img1.jpg" alt="">--%>
-                        <%--</div>--%>
-                        <%--<div class="videoTxt">--%>
-                            <%--<h4>上私人摄影课程会让妻子跟讲师幹起来</h4>--%>
-                            <%--<span>類型：亚洲电影</span>--%>
-                            <%--<span>更新：2019-02-21</span>--%>
-                            <%--<span>推薦：<a href="javascript:">直播做爱，自摸大秀，赶快加入</a></span>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-
-                    <%--<div class="video" id="videoPlay">--%>
-                        <%--<img src="${video.videoImageUrl}" alt="${video.videoImageAlt }">--%>
-                        <%--<div class="playBtn"></div>--%>
-                        <%--<div class="mask" onclick="playVideo();"></div>--%>
-                    <%--</div>--%>
-
-                    <%--<div class="videoPlayLink">--%>
-                        <%--<div class="bor">--%>
-                            <%--<span><i></i>播放线路</span>--%>
-                        <%--</div>--%>
-                        <%--<div class="playLine">--%>
-                            <%--<a href="javascript:">--%>
-                                <%--<em>线路一</em>--%>
-                                <%--<span>全球加速节点 - 默认线路</span>--%>
-                            <%--</a>--%>
-                            <%--<a href="javascript:">--%>
-                                <%--<em>线路二</em>--%>
-                                <%--<span>全球加速节点</span>--%>
-                            <%--</a>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
 
                 <div class="video" id="videoPlay">
                     <img src="${staticHost}/images/img1.jpg" alt="">
-                    <div class="playBtn"></div>
+                    <div class="playBtn" onclick="playVideo();"></div>
                     <div class="mask" onclick="playVideo();"></div>
                 </div>
 
                 <div class="next_page clearfix">
-                    <div class="prevBtn">
-                        上一篇：
-                        <a href="javascript:" target="_blank">上私人摄影课程会让妻子跟讲师幹起来吗?</a>
+                	<c:choose>
+                		<c:when test="${empty pre }">
+                		  <div class="prevBtn">
+                   	 	</div>
+                    </c:when>
+                		<c:otherwise>
+                			  <div class="prevBtn">
+                        		上一篇：
+                        		<a href="../${pre.id }.html" target="_blank">${pre.title }</a>
+                    		</div>
+                		</c:otherwise>
+                	</c:choose>
+                  	<c:choose>
+                  		<c:when test="${empty next }">
+                  		<div class="nextBtn"></div>
+                  		</c:when>
+                  		<c:otherwise>
+                  			 <div class="nextBtn">
+                        	下一篇：
+                        <a href="../${next.id }.html" target="_blank">${next.title }</a>
                     </div>
-                    <div class="nextBtn">
-                        下一篇：
-                        <a href="javascript:" target="_blank">上私人摄影课程会让妻子跟讲师幹起来吗?</a>
-                    </div>
+                  		</c:otherwise>
+                  	</c:choose>
+                   
                 </div>
 
 
