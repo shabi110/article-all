@@ -93,7 +93,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
+                    		<a href="../v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>
@@ -149,12 +149,12 @@
                     <span>您的位置：</span>
                     <a href="${pageContext.request.contextPath}/">首页</a> 》
                     <a href="javascript:">电影区</a> 》
-                    <a class="cur" href="${pageContext.request.contextPath}/v_${cateCode}.html">${cate.name }</a>
+                    <a class="cur" href="../v_${cateCode}.html">${cate.name }</a>
                 </div>
                 <div class="tabCon">
                     <div class="list clearfix">
                     	<c:forEach var="item" items="${videoPage.rows }">
-	                    	<a href="javascript:">
+	                    	<a href="../${item.id }.html">
 	                            <div class="img">
 	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
 	                            </div>
@@ -191,7 +191,7 @@
     </div>
 
     <script type="text/javascript">
-
+		var cateCode="${cateCode}";
         $(document).ready(function(){
 
             var swiper = new Swiper('.swiper-container', {
@@ -223,8 +223,10 @@
 
             //翻页
             $(".pagination").createPage({
-                pageNum: 20,
-                current: 6,
+                pageNum: ${totalPage},
+              // pageNum: 5,
+                current: ${page},
+                //current: 5,
                 backfun: function(e) {
                     //console.log(e);//回调
                 }

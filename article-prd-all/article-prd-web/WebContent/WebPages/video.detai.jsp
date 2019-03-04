@@ -93,7 +93,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
+                    		<a href="../v_${item.code }.html">${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>

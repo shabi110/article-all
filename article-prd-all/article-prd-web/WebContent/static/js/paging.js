@@ -11,32 +11,38 @@
 				obj.empty();
 				/*上一页*/
 				if (pageinit.current > 1) {
-					obj.append('<a href="javascript:;" class="prebtn">上一页</a>');
+					obj.append('<a href="../v_'+cateCode+'/v_'+(pageinit.current-1)+'.html" class="prebtn">上一页</a>');
 				} else{
 					obj.remove('.prevPage');
 					obj.append('<span class="disabled">上一页</span>');
 				}
-				/*中间页*/
+			/*	中间页*/
 				if (pageinit.current >4 && pageinit.pageNum > 4) {
-					obj.append('<a href="javascript:;" class="zxfPagenum">'+1+'</a>');
-					obj.append('<a href="javascript:;" class="zxfPagenum">'+2+'</a>');
+					obj.append('<a href="../v_'+cateCode+'/v_1.html" class="zxfPagenum">'+1+'</a>');
+					obj.append('<a href="../v_'+cateCode+'/v_2.html" class="zxfPagenum">'+2+'</a>');
 					obj.append('<span>...</span>');
 				}
-				if (pageinit.current >4 && pageinit.current <= pageinit.pageNum-5) {
-					var start  = pageinit.current - 2,end = pageinit.current + 2;
-				}else if(pageinit.current >4 && pageinit.current > pageinit.pageNum-5){
-					var start  = pageinit.pageNum - 4,end = pageinit.pageNum;
+				if(pageinit.current==5&&pageinit.pageNum==5){
+					var start = 4 , end =5;
 				}else{
-					var start = 1,end = 9;
+					if (pageinit.current >4 && pageinit.current <= pageinit.pageNum-5) {
+						var start  = pageinit.current - 2,end = pageinit.current + 2;
+					}else if(pageinit.current >4 && pageinit.current > pageinit.pageNum-5){
+						var start  = pageinit.pageNum - 2,end = pageinit.pageNum;
+					}else{
+						var start = 1,end = 9;
+					}
+					
 				}
+				
 				for (;start <= end;start++) {
 					if (start <= pageinit.pageNum && start >=1) {
 						if (start == pageinit.current) {
 							obj.append('<span class="current">'+ start +'</span>');
 						} else if(start == pageinit.current+1){
-							obj.append('<a href="javascript:;" class="zxfPagenum nextpage">'+ start +'</a>');
+							obj.append('<a href="../v_'+cateCode+'/v_'+start+'.html" class="zxfPagenum nextpage">'+ start +'</a>');
 						}else{
-							obj.append('<a href="javascript:;" class="zxfPagenum">'+ start +'</a>');
+							obj.append('<a href="../v_'+cateCode+'/v_'+start+'.html" class="zxfPagenum">'+ start +'</a>');
 						}
 					}
 				}
@@ -48,12 +54,12 @@
 					obj.remove('.nextbtn');
 					obj.append('<span class="disabled">下一页</span>');
 				} else{
-					obj.append('<a href="javascript:;" class="nextbtn">下一页</a>');
+					obj.append('<a href="../v_'+cateCode+'/v_'+(pageinit.current+1)+'.html" class="nextbtn">下一页</a>');
 				}
 				/*尾部*/
 				obj.append('<span>'+'共'+'<b>'+pageinit.pageNum+'</b>'+'页，'+'</span>');
-				obj.append('<span>'+'到第'+'<input type="number" class="zxfinput" value="5"/>'+'页'+'</span>');
-				obj.append('<span class="zxfokbtn">'+'确定'+'</span>');
+/*				obj.append('<span>'+'到第'+'<input type="number" class="zxfinput" value="5"/>'+'页'+'</span>');
+				obj.append('<span class="zxfokbtn">'+'确定'+'</span>');*/
 			}());
 		},
 		bindEvent:function(obj,pageinit){

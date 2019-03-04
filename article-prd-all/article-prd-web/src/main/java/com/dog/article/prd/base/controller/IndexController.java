@@ -49,7 +49,7 @@ public class IndexController {
 	public String videoList(@PathVariable("cateCode") String cateCode,@PathVariable("page") Integer page,Model model) {
 		PageSearch ps = new PageSearch();
 		ps.setPage(page);
-		ps.setRows(10);
+		ps.setRows(20);
 		VideoInfo params=new VideoInfo();
 		params.setVideoCateCode(cateCode);
 		params.setStatus(1);
@@ -62,8 +62,27 @@ public class IndexController {
 		List<VideoCate> cateList = this.baseCacheService.getVideoCateList();
 		model.addAttribute("cateList", cateList);
 		model.addAttribute("cate", this.baseCacheService.getVideoCateByCode(cateCode));
+		model.addAttribute("totalPage", totalPage(Integer.valueOf(pr.getTotal()+"")));
 		return "video";
 	}
 
+	@RequestMapping({"{id}.html"})
+	public String video(@PathVariable("id") Integer id,Model model) {
+		VideoInfo video = this.baseCacheService.getVideoInfo(id);
+		model.addAttribute("video", video);
+		List<VideoCate> cateList = this.baseCacheService.getVideoCateList();
+		model.addAttribute("cateList", cateList);
+		return "video.detai";
 	
+	}
+	
+	
+	
+	private int totalPage(int total) {
+		int totalPage=total/20;
+		if(total%20>0) {
+			return totalPage+1;
+		}
+		return totalPage;
+	}
 }
