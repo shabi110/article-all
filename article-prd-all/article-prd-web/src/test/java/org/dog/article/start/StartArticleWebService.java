@@ -8,6 +8,6 @@ import com.dog.framework.base.start.StartWebApp;
 public class StartArticleWebService {
 
     public static void main(String[] args) throws Exception {
-        StartWebApp.main(args);
+        StartWebApp.main(args);   
     }
 }
