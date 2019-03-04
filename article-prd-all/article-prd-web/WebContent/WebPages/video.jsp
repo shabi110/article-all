@@ -161,12 +161,12 @@
 	                            <p>${item.title }</p>
 	                        </a>
                     	</c:forEach>
-                        
-                  
-
+                    </div>
                 </div>
 
-            </div>
+                <div class="pagination"></div>
+
+
         </div>
 
         <div class="advertisment">
@@ -220,6 +220,15 @@
                     $('.tabCon .list').eq(i).show();
                 })
             })
+
+            //翻页
+            $(".pagination").createPage({
+                pageNum: 20,
+                current: 6,
+                backfun: function(e) {
+                    //console.log(e);//回调
+                }
+            });
 
         });
 
