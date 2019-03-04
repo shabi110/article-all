@@ -164,6 +164,13 @@
                             <span>推薦：<a href="javascript:">直播做爱，自摸大秀，赶快加入</a></span>
                         </div>
                     </div>
+
+                    <div class="video" id="videoPlay">
+                        <img src="${video.videoImageUrl}" alt="${video.videoImageAlt }">
+                        <div class="playBtn"></div>
+                        <div class="mask" onclick="playVideo();"></div>
+                    </div>
+
                     <div class="videoPlayLink">
                         <div class="bor">
                             <span><i></i>播放线路</span>
@@ -204,6 +211,11 @@
                 本站已遵照「iWIN網路內容防護機構」進行分類，如有家長發現未成年兒童／少年瀏覽此站、請按照此方法過濾本站內容 >>『網站分級制度』</p>
         </div>
     </div>
+
+    <script type="text/javascript">
+        var ctx = "${ctx}";
+        var videoUrl = '${video.videoPlayUrl}';
+    </script>
 
     <script type="text/javascript">
 
