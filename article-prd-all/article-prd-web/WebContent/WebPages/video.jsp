@@ -93,7 +93,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="javascript:">${item.name }</a>
+                    		<a href="v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>
@@ -147,13 +147,13 @@
             <div class="wrap">
                 <div class="crumbs">
                     <span>您的位置：</span>
-                    <a href="javascript:">首页</a> 》
+                    <a href="${pageContext.request.contextPath}/">首页</a> 》
                     <a href="javascript:">电影区</a> 》
-                    <a class="cur" href="javascript:">亚洲电影</a>
+                    <a class="cur" href="${pageContext.request.contextPath}/v_${cateCode}.html">${cate.name }</a>
                 </div>
                 <div class="tabCon">
                     <div class="list clearfix">
-                    	<c:forEach var="item" items="${recommendList }">
+                    	<c:forEach var="item" items="${videoPage.rows }">
 	                    	<a href="javascript:">
 	                            <div class="img">
 	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
@@ -162,46 +162,7 @@
 	                        </a>
                     	</c:forEach>
                         
-                       
-                     <%--   <a href="javascript:">
-                            <div class="img">
-                                <img src="${staticHost}/images/img1.jpg" alt="">
-                            </div>
-                            <p>女捜査官BDSM媚薬拷问 轮姦鬼イカせに絶叫抵抗！！ 黒川すみれ</p>
-                        </a> --%>
-                    </div>
-
-                    <div class="list clearfix hide">
-                    	<c:forEach var="item" items="${newsList }">
-	                    	<a href="javascript:">
-	                            <div class="img">
-	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
-	                            </div>
-	                            <p>${item.title }</p>
-	                        </a>
-                    	</c:forEach>
-                    
-                        <%-- 
-                        <a href="javascript:">
-                            <div class="img">
-                                <img src="${staticHost}/images/img1.jpg" alt="">
-                            </div>
-                            <p>女捜査官BDSM媚薬拷问 轮姦鬼イカせに絶叫抵抗！！ 黒川すみれ2</p>
-                        </a> --%>
-                    </div>
-
-                    <div class="list clearfix hide">
-                    
-                    	<c:forEach var="item" items="${mostList }">
-	                    	<a href="javascript:">
-	                            <div class="img">
-	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
-	                            </div>
-	                            <p>${item.title }</p>
-	                        </a>
-                    	</c:forEach>
-                      
-                    </div>
+                  
 
                 </div>
 

@@ -8,6 +8,9 @@ public class RedisKeyConstant {
 	/**视频分类*/
 	public static final String VIDEO_CATE_KEY="dog-article-video-cate";
 	
+	/**视频单个分类*/
+	public static final String VIDEO_CATE_CODE_KEY="dog-article-video-cate-code-";
+	
 	/**视频详情*/
 	public static final String VIDEO_INFO_KEY = "dog-article-video-info-";
 

@@ -28,4 +28,8 @@ public interface IBaseCacheService {
 	
 	public List<VideoInfo> updateMostVideoInfoList();
 
+	public VideoCate updateVideoCateByCode(String code);
+	
+	public VideoCate getVideoCateByCode(String code); 
+	
 }

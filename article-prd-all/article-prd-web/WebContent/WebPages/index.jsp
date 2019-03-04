@@ -93,7 +93,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="javascript:">${item.name }</a>
+                    		<a href="v_${item.code }.html" target="_blank">${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>

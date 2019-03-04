@@ -64,7 +64,7 @@
                 <div class="column clearfix hide">
                     <h5>图片区</h5>
                     <div class="link">
-                        <a class="cur" href="javascript:">卡通动漫</a>
+                        <a class="cur" href="">卡通动漫</a>
                         <a href="javascript:">亚洲图片</a>
                         <a href="javascript:">欧美图片</a>
                         <a href="javascript:">偷拍自拍</a>
@@ -93,7 +93,7 @@
                     <h5>电影区</h5>
                     <div class="link">
                     	<c:forEach var="item" items="${cateList }">
-                    		<a href="javascript:">${item.name }</a>
+                    		<a href="v_${item.code }.htm" <c:if test="${item.code = cateCode}">class="cur"</c:if>>${item.name }</a>
                     	</c:forEach>
                     </div>
                 </div>

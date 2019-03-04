@@ -164,4 +164,27 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 		return pr.getRows();
 	}
 	
+	@Override
+	public VideoCate updateVideoCateByCode(String code) {
+		
+		VideoCate cate= new VideoCate();
+		cate.setStatus(1);
+		cate.setCode(code);
+		cate = this.videoCateService.findOneByCondition(new SearchCondition<VideoCate>(cate));
+		if(EmptyUtil.isEmpty(cate)) {
+			return null;
+		}
+		redisManager.saveString(RedisKeyConstant.VIDEO_CATE_CODE_KEY+code, JSON.toJSONString(cate));
+		return cate;
+	}
+	
+	@Override
+	public VideoCate getVideoCateByCode(String code) {
+		String json = redisManager.getStringValueByKey(RedisKeyConstant.VIDEO_CATE_CODE_KEY+code);
+		if(EmptyUtil.isEmpty(json)) {
+			return updateVideoCateByCode(code);
+		}
+		VideoCate cate=JSON.parseObject(json,VideoCate.class);
+		return cate;
+	}
 }
