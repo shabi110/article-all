@@ -177,6 +177,7 @@ dd, dt, li{ display:block;}
     display:block;
     width:230px;
     height:300px;
+    overflow: hidden;
 }
 .tabCon a .img img{
     display:block;
