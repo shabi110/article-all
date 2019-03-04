@@ -38,6 +38,7 @@
 </script>
 <script src="${staticHost}/js/jquery-1.11.3.js"></script>
 <script src="${staticHost}/js/TcPlayer-2.2.0.js"></script>
+<script src="${staticHost}/js/video.js"></script>
 <script src="${staticHost}/js/swiper.min.js"></script>
 <script src="${staticHost}/js/paging.js"></script>
 <script src="${staticHost}/js/flexible.js"></script>

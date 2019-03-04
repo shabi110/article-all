@@ -9,7 +9,7 @@ $(function(){
 		//if(isFirstVideo){
 			$videoPlay.html('<div id="videoBox"></div>');
 			videoDom = new TcPlayer('videoBox', {
-				"m3u8": videoUrl,
+				"m3u8": 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
 				"autoplay" : true,
 				"controls": "default",	//system,none,default
 				"coverpic" : "",
