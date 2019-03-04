@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dog.article.dal.video.dao.VideoCateMapper">
+  <resultMap id="BaseResultMap" type="com.dog.article.common.video.model.VideoCate">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+	<result column="name" jdbcType="VARCHAR" property="name" />
+	<result column="code" jdbcType="VARCHAR" property="code" />
+	<result column="status" jdbcType="INTEGER" property="status" />
+	<result column="page_title" jdbcType="VARCHAR" property="pageTitle" />
+	<result column="keywords" jdbcType="VARCHAR" property="keywords" />
+	<result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+</mapper>

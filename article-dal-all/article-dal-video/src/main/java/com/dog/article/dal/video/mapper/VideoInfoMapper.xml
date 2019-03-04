@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dog.article.dal.video.dao.VideoInfoMapper">
+  <resultMap id="BaseResultMap" type="com.dog.article.common.video.model.VideoInfo">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+	<result column="title" jdbcType="VARCHAR" property="title" />
+	<result column="video_cate_id" jdbcType="INTEGER" property="videoCateId" />
+	<result column="video_cate_name" jdbcType="VARCHAR" property="videoCateName" />
+	<result column="video_cate_code" jdbcType="VARCHAR" property="videoCateCode" />
+	<result column="description" jdbcType="LONGVARCHAR" property="description" />
+	<result column="read_num" jdbcType="INTEGER" property="readNum" />
+	<result column="real_read_num" jdbcType="INTEGER" property="realReadNum" />
+	<result column="image_alt" jdbcType="VARCHAR" property="imageAlt" />
+	<result column="url" jdbcType="VARCHAR" property="url" />
+	<result column="content" jdbcType="LONGVARCHAR" property="content" />
+	<result column="target_ids" jdbcType="VARCHAR" property="targetIds" />
+	<result column="subject_ids" jdbcType="VARCHAR" property="subjectIds" />
+	<result column="author_id" jdbcType="INTEGER" property="authorId" />
+	<result column="author_code" jdbcType="VARCHAR" property="authorCode" />
+	<result column="author_name" jdbcType="VARCHAR" property="authorName" />
+	<result column="modify_user_id" jdbcType="INTEGER" property="modifyUserId" />
+	<result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+	<result column="create_user_id" jdbcType="INTEGER" property="createUserId" />
+	<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	<result column="status" jdbcType="INTEGER" property="status" />
+	<result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
+	<result column="send_time" jdbcType="TIMESTAMP" property="sendTime" />
+	<result column="video_image_alt" jdbcType="VARCHAR" property="videoImageAlt" />
+	<result column="video_image_url" jdbcType="VARCHAR" property="videoImageUrl" />
+	<result column="key_words" jdbcType="VARCHAR" property="keyWords" />
+	<result column="video_play_url" jdbcType="VARCHAR" property="videoPlayUrl" />
+	<result column="isRecommend" jdbcType="VARCHAR" property="is_recommend" />
+  </resultMap>
+</mapper>
