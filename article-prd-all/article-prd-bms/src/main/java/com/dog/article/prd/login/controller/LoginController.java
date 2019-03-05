@@ -129,7 +129,7 @@ public class LoginController {
                 }
             }
             HttpSessionTool.doEmployeeLogin(session, employeeSession);
-            return new DataResponse(1000, "登录成功", "user");
+            return new DataResponse(1000, "登录成功", "user/backstage");
         } else {
             return loginResult;
         }
