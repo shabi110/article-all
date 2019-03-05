@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
 import com.dog.article.common.base.constant.RedisKeyConstant;
+import com.dog.article.common.base.model.SiteBanner;
 import com.dog.article.common.video.model.VideoCate;
 import com.dog.article.common.video.model.VideoInfo;
 import com.dog.article.service.base.service.IBaseCacheService;
+import com.dog.article.service.base.service.ISiteBannerService;
 import com.dog.article.service.video.service.IVideoCateService;
 import com.dog.article.service.video.service.IVideoInfoService;
 import com.dog.framework.base.common.utils.EmptyUtil;
@@ -18,6 +20,7 @@ import com.dog.framework.base.database.domain.page.PageResult;
 import com.dog.framework.base.database.domain.page.PageSearch;
 import com.dog.framework.base.database.domain.search.SearchCondition;
 import com.dog.framework.base.database.redis.RedisManager;
+import com.google.common.collect.Lists;
 
 @Service
 public class BaseCacheServiceImpl implements IBaseCacheService {
@@ -27,6 +30,9 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 	
 	@Autowired
 	private IVideoCateService videoCateService;
+	
+	@Autowired
+	private ISiteBannerService siteBannerService;
 
     @Autowired
     @Qualifier("commonRedisManager")
@@ -59,7 +65,7 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 	
 	@Override
 	public VideoInfo getVideoInfo(Integer videoId) {
-		String json=this.redisManager.getStringValueByKey(RedisKeyConstant.VIDEO_INFO_KEY);
+		String json=this.redisManager.getStringValueByKey(RedisKeyConstant.VIDEO_INFO_KEY+videoId);
 		if(EmptyUtil.isEmpty(json)) {
 			return this.updateVideoInfo(videoId);
 		}
@@ -72,7 +78,7 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 		if(EmptyUtil.isEmpty(video)) {
 			return null;
 		}
-		this.redisManager.saveString(RedisKeyConstant.VIDEO_INFO_KEY, JSON.toJSONString(video));
+		this.redisManager.saveString(RedisKeyConstant.VIDEO_INFO_KEY+videoId, JSON.toJSONString(video));
 		return video;
 	}
 	
@@ -186,5 +192,31 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 		}
 		VideoCate cate=JSON.parseObject(json,VideoCate.class);
 		return cate;
+	}
+	
+	@Override
+	public List<SiteBanner> getSiteBannerList(){
+		String json = redisManager.getStringValueByKey(RedisKeyConstant.BANNER_LIST_KEY);
+		if(EmptyUtil.isEmpty(json)) {
+			return updateSiteBannerList();
+		}
+		return JSON.parseArray(json,SiteBanner.class);
+	}
+	
+	@Override
+	public List<SiteBanner> updateSiteBannerList(){
+		PageSearch ps = new PageSearch();
+		ps.setPage(1);
+		ps.setRows(4);
+		SiteBanner b = new SiteBanner();
+		b.setStatus(1);
+		SearchCondition<SiteBanner> condition = new SearchCondition<SiteBanner>(b,ps);
+		condition.buildOrderByConditions("sort", "asc");
+		PageResult<SiteBanner> pr= this.siteBannerService.findByPage(condition);
+		if(EmptyUtil.isEmpty(pr.getRows())) {
+			return Lists.newArrayList();
+		}
+		redisManager.saveString(RedisKeyConstant.BANNER_LIST_KEY,JSON.toJSONString(pr.getRows()));
+		return pr.getRows();
 	}
 }

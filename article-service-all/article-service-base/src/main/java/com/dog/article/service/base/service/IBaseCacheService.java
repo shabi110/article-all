@@ -2,6 +2,7 @@ package com.dog.article.service.base.service;
 
 import java.util.List;
 
+import com.dog.article.common.base.model.SiteBanner;
 import com.dog.article.common.video.model.VideoCate;
 import com.dog.article.common.video.model.VideoInfo;
 
@@ -31,5 +32,9 @@ public interface IBaseCacheService {
 	public VideoCate updateVideoCateByCode(String code);
 	
 	public VideoCate getVideoCateByCode(String code); 
+	
+	public List<SiteBanner> getSiteBannerList();
+	
+	public List<SiteBanner> updateSiteBannerList();
 	
 }
