@@ -1,7 +1,7 @@
 @charset "utf-8";
 html{overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;width:100%;height:100%;}
 body{line-height:1.5;color:#333;margin:0;-webkit-tap-highlight-color:rgba(0,0,0,0);background-color:#F5F5F9;-webkit-text-size-adjust: none;
-	font:14px/100% Microsoft Yahei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;word-break:break-all;color:#3f3f3f;width:100%;height:100%;
+	font:14px/100% Microsoft Yahei, Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;word-break:break-all;color:#551515;width:100%;height:100%;
 }
 ::-moz-selection{background:#b3d4fc;text-shadow:none}
 ::selection{background:#b3d4fc;text-shadow:none}
@@ -69,21 +69,21 @@ input::-moz-focus-inner{border:0;padding:0;}
 /*layouts*/
 .mainArea{height:100%;}
 .mainBox{min-width: 1000px;overflow:scroll;}
-.mainTitle{height:50px;line-height: 50px;background:#3F3F3F;position:fixed;top:0px;left:0px;z-index:2000;width:100%;min-width: 1000px;}
+.mainTitle{height:50px;line-height: 50px;background:#e3e0d1;position:fixed;top:0px;left:0px;z-index:2000;width:100%;min-width: 1000px;}
 .mainSearch{padding:10px;margin-left:20px;margin-right:20px;margin-top:70px;background:#fff;position: relative;}
 .mainContent{padding:10px;margin-left:20px;margin-right:20px;margin-top:10px;background:#fff;}
 .mainContent .bar{height:35px;}
-.logoBox{width:120px;height: 50px;line-height: 50px;padding-left:7px;background:#3F3F3F;font-size: 16px;box-sizing: border-box;}
-.logoBox:hover{background: #000000;}
+.logoBox{width:120px;height: 50px;line-height: 50px;background: #f1efdf;padding-left:7px;font-size: 16px;box-sizing: border-box;}
+.logoBox:hover{background: #f1efdf;}
 
 .mainTitle .titleContent{width:980px;height:50px;margin-left:120px;}
 
 .asideBox{padding-top:50px;}
-.asideLeft{width:120px;background: #019683;}
+.asideLeft{width:120px;background: #e3e0d1;}
 .asideLeft .inner{width:120px;overflow-y:auto;}
-.asideLeft .nav li a{height: 50px;line-height: 50px;padding-left:27px;color:#ffffff;font-size: 14px;}
-.asideLeft .nav li a:hover{background: #01AB96;}
-.asideLeft .nav li.cur a{background: #F5F5F9;color:#019683;}
+.asideLeft .nav li a{height: 50px;line-height: 50px;padding-left:27px;color:#551515;font-size: 14px;}
+.asideLeft .nav li a:hover{background: #f1efdf;}
+.asideLeft .nav li.cur a{background: #f1efdf;}
 
 .asideRig{width:120px;background: #E0E0E0;}
 .asideRig h2{height: 50px;line-height: 50px;}
@@ -102,8 +102,8 @@ input::-moz-focus-inner{border:0;padding:0;}
 .inputEmpty .icon{height:20px;}
 
 /*buttons*/
-.pageBtn{background: #3387FF;height: 32px;line-height: 32px;border:none;font-size: 14px;color:#fff;text-align: center;box-sizing: border-box;width:100px;border:#3387FF 1px solid;}
-.pageBtn:hover{background:#5599FF;}
+.pageBtn{background: #ed018c;height: 32px;line-height: 32px;border:none;font-size: 14px;color:#fff;text-align: center;box-sizing: border-box;width:100px;}
+/*.pageBtn:hover{background:#5599FF;}*/
 
 .writeBtn{background: #ffffff;height: 32px;line-height: 32px;font-size: 14px;text-align: center;box-sizing: border-box;width:100px;border:#CFCFCF 1px solid;}
 .writeBtn:hover{background:#f4f4f4;}
@@ -147,18 +147,18 @@ input::-moz-focus-inner{border:0;padding:0;}
 .loginBox .errorTips .inner{background:#FFF3F3;height:44px;line-height: 44px;color:#FF0000;top:20px;}
 .loginBox .actLine{height:2px;background:#2EA392;}
 .loginBox .actLine.error{background:#FF0000;}
-.loginBox .loginBtn{background:#2EA392;height: 42;line-height: 42px;border:none;font-size: 20px;color:#fff;text-align: center;box-sizing: border-box;width:100%;}
+.loginBox .loginBtn{background:#f1efdf;height: 40px;line-height: 40px;border:none;font-size: 20px;color:#551515;text-align: center;box-sizing: border-box;width:100%;}
 .loginBox .loginBtn.disabled,
-.loginBox .loginBtn:hover{background:#01AB96;}
-.loginBox .loginBtn.loading{background:#01AB96;}
+.loginBox .loginBtn:hover{background:#f1efdf;}
+.loginBox .loginBtn.loading{background:#f1efdf;}
 
 .userSetBox{background:#3F3F3F;width:100px;height:50px;z-index: 2000;border-left:#000000 1px solid;}
-.userSetBox .user{background:#3F3F3F;height: 50px;width:100px;z-index:15;}
-.userSetBox .user:hover{background: #000000;}
-.userSetBox .user .name{height: 50px;line-height: 50px;color: #e5e5e5;}
+.userSetBox .user{background:#e3e0d1;height: 50px;width:100px;z-index:15;}
+.userSetBox .user:hover{background-color:#f1efdf;}
+.userSetBox .user .name{height: 50px;line-height: 50px;color: #551515;}
 .userSetBox .user .box{width: 100px;box-shadow: 0 1px 4px 0 rgba(0,0,0,.3)}
 .userSetBox .user .box a{height: 40px;line-height: 40px;}
-.userSetBox .user .box a:hover{background: #3387FF;color:#fff;}
+.userSetBox .user .box a:hover{}
 .userSetBox .user .arrow{}
 
 .navMenu{height: 50px;}
@@ -207,7 +207,7 @@ button.fncBtn{height: 30px;line-height: 30px;}
 .tableTitle .itit{width:15%;}
 .tableTitle .each{width:14%;}
 .tableContent{border:#EBEBEB 1px solid;}
-.tableCtHover:hover{border-color:#5599FF;}
+.tableCtHover:hover{border-color:#ed018c;}
 .tableContent .bar{background: #EBEDEF;}
 .tableContent .inner{}
 .tableContent .each{width:14%;border-left:#EBEBEB 1px solid;box-sizing: border-box;}
@@ -224,8 +224,8 @@ button.fncBtn{height: 30px;line-height: 30px;}
 .tableContent .remark{background:#FFFFF1;}
 
 .pages{height:32px;line-height: 32px;font-size:12px;}
-.pages a{width:32px;color:#fff;background: #3387FF;display:inline-block;height:32px;border:#3387FF 1px solid;line-height: 32px;text-align:center;box-sizing: border-box;}
-.pages a:hover{background-color: #5599FF;}
+.pages a{width:32px;color:#fff;background: #ed018c;display:inline-block;height:32px;line-height: 32px;text-align:center;box-sizing: border-box;}
+/*.pages a:hover{background-color: #5599FF;}*/
 .pages a.disabled,
 .pages a.disabled:hover{border-color:#e5e5e5;cursor:default;}
 .pages a.current{background: #3387FF;}
@@ -265,6 +265,35 @@ button.fncBtn{height: 30px;line-height: 30px;}
 .orderParas .tag{display: inline-block;width:60px;text-align: right;}
 
 .loading{background:url(../images/loading.gif) center center no-repeat;}
+
+
+.newBor{
+    border-bottom:1px solid #551515;
+}
+.newBg{
+    background-color: #e3e0d1;
+}
+.loginInput{
+    background-color: #f1efdf;
+}
+.loginInput .loginTxt{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #551515;
+    vertical-align: middle;
+}
+.loginInput .ipt{
+    display: inline-block;
+    width: 266px;
+    height: 40px;
+    line-height: 40px;
+    background-color: transparent;
+    color: #551515;
+    vertical-align: middle;
+}
 
 
 /*swipe*/

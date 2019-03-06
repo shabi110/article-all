@@ -7,9 +7,9 @@
     <title>运营管理系统</title>
     <jsp:include page="common/public.jsp" />
 </head>
-<body class="wtBg">
+<body class="newBg">
 	<div class="posFixed" style="top:50px;width:100%;">
-	    <div class="lgWrap botLine mgAuto" style="line-height:50px;">
+	    <div class="lgWrap newBor mgAuto" style="line-height:50px;">
 	        <span class="ilblock verMid"></span>
 	        <span class="fz26 ml10">管理后台</span>
 	    </div>
@@ -18,26 +18,26 @@
         <form action="${pageContext.request.contextPath}/login" method="post" id="loginForm">
             <ul class="box">
                 <li class="posRel">
-                    <div class="botLine pl100">
-                        <div class="tag bold posAbs fz16 left0 top0">用户名</div>
-                        <input type="tel" id="phone" name="phone" class="ipt block fz16" placeholder="请输入用户名" />
+                    <div class="loginInput">
+                        <div class="fz16 loginTxt">用户名</div>
+                        <input type="tel" id="phone" name="phone" class="ipt fz16" placeholder="请输入用户名" />
                     </div>
                     <div id="actLine-phone" class="actLine posAbs left0 right0 bottom0 hide"></div>
                     <div id="errorTips-phone" class="errorTips inner posAbs left0 right0 fz14 rad3"></div>
                 </li>
                 <li class="posRel mt30">
-                    <div class="botLine pl100">
-                        <div class="tag bold posAbs fz16 left0 top0">登录密码</div>
-                        <input type="password" id="password" name="password" class="ipt block fz16" placeholder="请输入密码" />
+                    <div class="loginInput">
+                        <div class="fz16 loginTxt">登录密码</div>
+                        <input type="password" id="password" name="password" class="ipt fz16" placeholder="请输入密码" />
                     </div>
                     <div id="actLine-password" class="actLine posAbs left0 right0 bottom0 hide"></div>
                     <div id="errorTips-password" class="errorTips inner posAbs left0 right0 fz14 rad3"></div>
                 </li>
                 <li class="posRel mt30">
-                    <div class="botLine pl100">
-                        <div class="tag bold posAbs fz16 left0 top0">验证码</div>
+                    <div class="loginInput">
+                        <div class="fz16 loginTxt">验证码</div>
                         <div class="vcodeImg posAbs right0"><img id="vcodeImg" src="${pageContext.request.contextPath}/validateCode?width=100&height=35" class="block cursorPot" title="点击刷新" onclick="changeVcode(this);" /></div>
-                        <input type="text" id="code" name="code" class="ipt block fz16" placeholder="请输入验证码" />
+                        <input type="text" id="code" name="code" class="ipt fz16" placeholder="请输入验证码" />
                     </div>
                     <div id="actLine-code" class="actLine posAbs left0 right0 bottom0 hide"></div>
                     <div id="errorTips-code" class="errorTips inner posAbs left0 right0 fz14 rad3"></div>
