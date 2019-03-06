@@ -138,8 +138,8 @@ button,input,textarea{
 }
 .tabCon a{
     display:block;
-    width:3.52rem;
-    height:5.5rem;
+    width:2.3rem;
+    height:4.2rem;
     border-radius: 0.05rem;
     float:left;
     margin-right: 0.15rem;
@@ -147,14 +147,14 @@ button,input,textarea{
     background-color: #f1efdf;
     overflow: hidden;
 }
-.tabCon a:nth-child(2n){
+.tabCon a:nth-child(3n){
     margin-right: 0;
 }
 
 .tabCon a .img{
     display:block;
-    width:3.54rem;
-    height:4.6rem;
+    width:100%;
+    height:auto;
     overflow: hidden;
 }
 .tabCon a .img img{
@@ -163,7 +163,7 @@ button,input,textarea{
 }
 .tabCon a p{
     padding:0.1rem 0.12rem 0;
-    line-height: 0.25rem;
+    line-height: 0.26rem;
     font-size: 0.18rem;
     color:#551515;
 }
@@ -213,28 +213,46 @@ button,input,textarea{
 }
 
 
-
 .pagination{
-    padding: 0.2rem 0.15rem;
+    padding:0.2rem 0;
     text-align: center;
 }
-.pagination a {
+.pagination a,.pagination span{
     display:inline-block;
-    height: 0.4rem;
-    line-height: 0.4rem;
-    border-radius: 0.05rem;
+    height: 0.48rem;
+    line-height:0.48rem;
+    border-radius: 3px;
     padding: 0 0.12rem;
-    margin-right: 0.02rem;
+    margin:0 0.05rem;
     background-color: #f1efdf;
     color: #551515;
-    font-size: 0.18rem;
     vertical-align: middle;
 }
 
-.pagination a.cur{
+.pagination a:hover,.pagination a.current,.pagination span.current{
     background-color: #ed018c;
     color: #ffffff;
 }
+.pagination input{
+    width: 0.5rem;
+    height: 0.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #E6E6E6;
+    margin: 0 0.12rem;
+    border-radius: 3px;
+    color: #666;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+
 
 
 .videoDetail{
