@@ -185,8 +185,8 @@
 
         <div class="advertisment">
             <div class="wrap">
-                <a href="javascript:">
-                    <img src="${staticHost}/images/img2.jpg" alt="">
+                <a href="http://bbo122.com/" target="_blank">
+                    <img src="${staticHost}/images/img2.gif" alt="">
                 </a>
             </div>
         </div>
