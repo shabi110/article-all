@@ -195,6 +195,10 @@ dd, dt, li{ display:block;}
     line-height: 25px;
     font-size: 18px;
     color:#551515;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 .tabCon a:hover p{
     color:#ed018c;
