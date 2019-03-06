@@ -48,4 +48,12 @@
 <!--电脑端-->
 <link rel="stylesheet" type="text/css" href="${staticHost}/css/style_PC.css" media="screen and (min-width: 960px)"/>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135654188-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-135654188-1');
+</script>

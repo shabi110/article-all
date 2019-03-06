@@ -15,7 +15,7 @@
     <meta name="description" content="大型的新型的成人网站，免费提供成人图片，成人小说，成人电影等内容．${video.videoCateName}，${video.title}" />
    
     <jsp:include page="common/public.jsp"/>
-
+	
 </head>
 
 <body>
