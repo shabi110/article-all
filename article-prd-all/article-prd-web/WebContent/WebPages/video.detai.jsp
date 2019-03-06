@@ -142,7 +142,8 @@
                     <span>您的位置：</span>
                     <a href="../">首页</a> 》
                     <a href="javascript:">电影区</a> 》
-                    <a class="cur" href="../v_${video.videoCateCode}.html">${video.videoCateName }</a>
+                    <a class="cur" href="../v_${video.videoCateCode}.html">${video.videoCateName }</a>》
+                    <a href="javascript:">${video.title }</a>
                 </div>
 
 

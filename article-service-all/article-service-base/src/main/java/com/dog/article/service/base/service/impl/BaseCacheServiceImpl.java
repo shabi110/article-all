@@ -99,7 +99,7 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 	public List<VideoInfo> updateRecommendVideoInfoList(){
 		PageSearch ps =new PageSearch();
 		ps.setPage(1);
-		ps.setRows(10);
+		ps.setRows(30);
 		VideoInfo params=new VideoInfo();
 		params.setIsRecommend(1);
 		SearchCondition<VideoInfo> condition=new SearchCondition<VideoInfo>(params,ps);
@@ -129,7 +129,7 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 	public List<VideoInfo> updateNewVideoInfoList(){
 		PageSearch ps =new PageSearch();
 		ps.setPage(1);
-		ps.setRows(10);
+		ps.setRows(30);
 		VideoInfo params=new VideoInfo();
 		SearchCondition<VideoInfo> condition=new SearchCondition<VideoInfo>(params,ps);
 		condition.buildOrderByConditions("createTime", "desc");
@@ -158,7 +158,7 @@ public class BaseCacheServiceImpl implements IBaseCacheService {
 	public List<VideoInfo> updateMostVideoInfoList(){
 		PageSearch ps =new PageSearch();
 		ps.setPage(1);
-		ps.setRows(10);
+		ps.setRows(30);
 		VideoInfo params=new VideoInfo();
 		SearchCondition<VideoInfo> condition=new SearchCondition<VideoInfo>(params,ps);
 		condition.buildOrderByConditions("realReadNum", "desc");

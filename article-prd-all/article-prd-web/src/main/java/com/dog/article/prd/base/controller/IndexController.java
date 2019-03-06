@@ -55,7 +55,7 @@ public class IndexController {
 	public String videoList(@PathVariable("cateCode") String cateCode,@PathVariable("page") Integer page,Model model) {
 		PageSearch ps = new PageSearch();
 		ps.setPage(page);
-		ps.setRows(20);
+		ps.setRows(30);
 		VideoInfo params=new VideoInfo();
 		params.setVideoCateCode(cateCode);
 		params.setStatus(1);
@@ -104,8 +104,8 @@ public class IndexController {
 	
 	
 	private int totalPage(int total) {
-		int totalPage=total/20;
-		if(total%20>0) {
+		int totalPage=total/30;
+		if(total%30>0) {
 			return totalPage+1;
 		}
 		return totalPage;
