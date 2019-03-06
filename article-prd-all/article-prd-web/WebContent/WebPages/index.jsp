@@ -148,7 +148,7 @@
                 <div class="tabCon">
                     <div class="list clearfix">
                     	<c:forEach var="item" items="${recommendList }">
-	                    	<a href="javascript:">
+	                    	<a href="../${item.id}.html">
 	                            <div class="img">
 	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
 	                            </div>
@@ -167,7 +167,7 @@
 
                     <div class="list clearfix hide">
                     	<c:forEach var="item" items="${newsList }">
-	                    	<a href="javascript:">
+	                    	<a href="../${item.id}.html">
 	                            <div class="img">
 	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
 	                            </div>
@@ -187,7 +187,7 @@
                     <div class="list clearfix hide">
                     
                     	<c:forEach var="item" items="${mostList }">
-	                    	<a href="javascript:">
+	                    	<a href="../${item.id}.html">
 	                            <div class="img">
 	                                <img src="${item.videoImageUrl }" alt="${item.videoImageAlt }">
 	                            </div>

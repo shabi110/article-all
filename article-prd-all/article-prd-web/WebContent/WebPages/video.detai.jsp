@@ -10,9 +10,9 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
-    <meta name="description" content="不超过150个字符"/>
-    <meta name="keywords" content=""/>
-    <title></title>
+    <title>51撸吧-${video.videoCateName}-${video.title}</title>
+    <meta name="keywords" content="成人图片，成人小说，成人电影，${video.videoCateName}，${video.title}" />
+    <meta name="description" content="大型的新型的成人网站，免费提供成人图片，成人小说，成人电影等内容．${video.videoCateName}，${video.title}" />
    
     <jsp:include page="common/public.jsp"/>
 
