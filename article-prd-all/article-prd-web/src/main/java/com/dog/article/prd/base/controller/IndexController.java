@@ -13,6 +13,7 @@ import com.dog.article.common.video.model.VideoCate;
 import com.dog.article.common.video.model.VideoInfo;
 import com.dog.article.service.base.service.IBaseCacheService;
 import com.dog.article.service.video.service.IVideoInfoService;
+import com.dog.framework.base.common.utils.EmptyUtil;
 import com.dog.framework.base.database.domain.page.PageResult;
 import com.dog.framework.base.database.domain.page.PageSearch;
 import com.dog.framework.base.database.domain.search.RangeCondition;
@@ -92,7 +93,10 @@ public class IndexController {
 		n.buildRangeConditions(new RangeCondition("id",video.getId(),RangeConditionType.GreaterThan));
 		n.buildOrderByConditions("id", "asc");
 		next = this.videoInfoService.findOneByCondition(n);
-		
+		video.setRealReadNum(EmptyUtil.isEmpty(video.getRealReadNum())?1:(video.getRealReadNum().intValue()+1));
+		this.videoInfoService.modifyEntity(video);
+		this.baseCacheService.getMostVideoInfoList();
+		this.baseCacheService.updateVideoInfo(video.getId());
 		model.addAttribute("pre", befo);
 		model.addAttribute("next", next);
 		List<SiteBanner> bannerList = this.baseCacheService.getSiteBannerList();
